@@ -1,4 +1,9 @@
 .wallpaper { 
 	background-image: url("../images/bluewallpaper.jpg");
     background-size: 100%;
+}
 
+.randomNumber {
+    border: 2px solid black; 
+   color: brown;
+}
