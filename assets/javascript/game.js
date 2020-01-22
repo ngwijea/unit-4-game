@@ -1,5 +1,7 @@
+
+
 // Create variable to hold  the random number show to the user 19-120
-var randomNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
+var randomNumber = Math.floor(Math.random() * 102) + 19;
 $(".randomNumber").text(randomNumber);
 
 // Create variable to hold random number behind the images
@@ -38,13 +40,14 @@ var losses = 0;
 $(".losses").text("Losses" + " " + losses);
 
 var totalScore = 0;
+$(".totalScore").text(totalScore)
 
 // functions to make the game work
 
 // reset function
 
 function reset() {
-  randomNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
+  randomNumber = Math.floor(Math.random() * 102) + 19;
   console.log(randomNumber);
   $(".randomNumber").text(randomNumber);
   blucrystal = Math.floor(Math.random() * 11 + 1);
@@ -118,3 +121,5 @@ function lose() {
     }
   });
 }
+
+
