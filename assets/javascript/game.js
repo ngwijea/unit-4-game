@@ -24,12 +24,12 @@ $("#lightcrystal").html(
     ">"
 );
 
-var purpleCrystal = Math.floor(Math.random() * 12) + 1;
+var purplecrystal = Math.floor(Math.random() * 12) + 1;
 $("#purplecrystal").html(
   "<img src=" +
     "assets/images/purplecrystal.png" +
     " value=" +
-    purpleCrystal +
+    purplecrystal +
     ">"
 );
 
@@ -51,9 +51,29 @@ function reset() {
   console.log(randomNumber);
   $(".randomNumber").text(randomNumber);
   blucrystal = Math.floor(Math.random() * 11 + 1);
+  $("#blucrystal").html(
+    "<img src=" + "assets/images/bluecrystal.png" + " value=" + blucrystal + ">"
+  );
   redcrystal = Math.floor(Math.random() * 11 + 1);
+  $("#redcrystal").html(
+    "<img src=" + "assets/images/redcrystal.png" + " value=" + redcrystal + ">"
+  );
   lightcrystal = Math.floor(Math.random() * 11 + 1);
-  purpleCrystal = Math.floor(Math.random() * 11 + 1);
+  $("#lightcrystal").html(
+    "<img src=" +
+      "assets/images/lightcrystal.png" +
+      " value=" +
+      lightcrystal +
+      ">"
+  );
+  purplecrystal = Math.floor(Math.random() * 11 + 1);
+  $("#purplecrystal").html(
+    "<img src=" +
+      "assets/images/purplecrystal.png" +
+      " value=" +
+      purplecrystal +
+      ">"
+  );
   totalScore = 0;
   $(".totalScore").text(totalScore);
 }
@@ -61,10 +81,10 @@ function reset() {
 // win function
 
 function win() {
-  if (totalScore === number) {
+  if (totalScore === randomNumber) {
     alert("You Win!");
     wins++;
-    $(".wins").text("Wins" + wins);
+    $(".wins").text("Wins" + " " + wins);
     reset();
   }
 }
@@ -72,12 +92,13 @@ function win() {
 // lose function
 
 function lose() {
-  if (totalScore > number) {
+  if (totalScore > randomNumber) {
     alert("You Lose!");
     losses++;
-    $(".losses").text(losses);
+    $(".losses").text("Wins" + " " + losses);
     reset();
   }
+}
 
   // click functions
 
@@ -111,8 +132,8 @@ function lose() {
     }
   });
 
-  $("#purpleCrystal").on("click", function() {
-    totalScore = totalScore + purpleCrystal;
+  $("#purplecrystal").on("click", function() {
+    totalScore = totalScore + purplecrystal;
     $(".totalScore").text(totalScore);
     if (totalScore == randomNumber) {
       win();
@@ -120,6 +141,6 @@ function lose() {
       lose();
     }
   });
-}
+
 
 
